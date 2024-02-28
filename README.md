@@ -1,7 +1,7 @@
 # Lista de Tarefas com React  `📓✍️` 
 ## Descrição
 
-Esse projeto foi desenvolvido a partir de um tutorial no Youtube do canal de tecnologia [Programação Web](https://www.youtube.com/@programacaoweb). O objetivo da reprodução do projeto foi colocar em prática os conceitos básicos da biblioteca React.
+Esse projeto foi desenvolvido a partir de um tutorial no Youtube do canal de tecnologia [Programação Web](https://www.youtube.com/@programacaoweb). O projeto é uma versão melhorada da 'Lista de Tarefas' contando agora com consistência dos dados utilizando o armazenamento local. O objetivo da reprodução do projeto foi colocar em prática os conceitos básicos da biblioteca React.
 
 ## Layout Final
 
