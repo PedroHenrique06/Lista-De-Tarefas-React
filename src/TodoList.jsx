@@ -1,11 +1,13 @@
 import React, {useState, useEffect} from "react";
 import "./TodoList.css";
-import Icone from "./assets/icon-list.png"
+import Icone from "./images/icon-list.png"
 
 function TodoList(){
 
+  // Controle de memória
   const listaStorage = localStorage.getItem("Lista");
 
+  // Controle de status
   const [lista, setLista]  = useState(listaStorage ? JSON.parse(listaStorage) : []);
   const [novoItem, setNovoItem] = useState("");
 
@@ -13,6 +15,7 @@ function TodoList(){
     localStorage.setItem("Lista", JSON.stringify(lista))
   }, [lista])
 
+  // Adiciona tarefa a lista
   function adicionaItem(form){
     form.preventDefault();
     if(!novoItem) {
@@ -23,18 +26,21 @@ function TodoList(){
     document.getElementById("input-entrada").focus();
   }
 
+  // Marca tarefa como realizada
   function clicou(index) {
     const listaAux = [...lista];
     listaAux[index].isCompleted = !listaAux[index].isCompleted;
     setLista(listaAux);
   }
 
+  // Deleta a tarefa
   function deleta(index) {
     const listaAux = [...lista];
     listaAux.splice(index, 1);
     setLista(listaAux);
   }
 
+  // Deleta todas as tarefas
   function deletaTudo() {
     setLista([]);
   }
@@ -55,10 +61,12 @@ function TodoList(){
       <div className="listaTarefas">
         <div>
           {
+            // Caso não existam tarefas
             lista.length < 1 
             ?
             <img width={250} src={Icone} />
             :
+            //Caso existam tarefas
             lista.map((item, index) => (
               <div 
               key={index}
